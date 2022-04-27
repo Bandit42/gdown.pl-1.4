@@ -25,7 +25,7 @@ my $FILENAME=shift;
 $FILENAME='gdown.'.strftime("%Y%m%d%H%M%S", localtime).'.'.substr(rand,2) if $FILENAME eq '';
 
 if ($URL=~m#^https?://drive.google.com/file/d/([^/]+)#) {
-    $URL="https://docs.google.com/uc?id=18pyI0U9LqOGYQTIT2pWOQUbZDCq9jUSR&export=download";
+    $URL="https://docs.google.com/uc?id=$1&export=download";
 }
 elsif ($URL=~m#^https?://drive.google.com/open\?id=([^/]+)#) {
     $URL="https://docs.google.com/uc?id=$1&export=download";
